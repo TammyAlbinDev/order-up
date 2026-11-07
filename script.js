@@ -25,3 +25,18 @@ let tax = total * 0.08;
 document.querySelector("#tax").textContent = "Tax (8%): $" + tax.toFixed(2);
 
 document.querySelector("#total-with-tax").textContent = "Total with tax: $" + (total + tax).toFixed(2);
+
+const menu = [
+  { name: "Chicken and Sausage Gumbo", price: 8.50 },
+  { name: "Cajun Jambalaya", price: 9.00 },
+  { name: "Shrimp Po Boy", price: 12.50 },
+  { name: "Crawfish Etouffee", price: 13.00 }
+];
+
+const menuList = document.querySelector("#menu-list");
+
+menu.forEach(function (item) {
+  const li = document.createElement("li");
+  li.textContent = item.name + " — $" + item.price.toFixed(2);
+  menuList.appendChild(li);
+});
